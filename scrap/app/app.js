@@ -1,31 +1,26 @@
 
-
 var express = require('express');
 var app = express();
 
 
-app.get('/', function(req, res) {
-  res.send('Got it again!');
+// app.get('/', function (req, res) {
+// // ES6 Back Ticks  (` `);
+//     res.send(`
+//       <h1>First Route</h1>
+//       `);
+//
+// });
+
+// Add Routes
+app.use(require('./routes/index'));
+
+app.get('/studio', function (req, res) {
+   res.send(`Studio Route`);
 });
+
 
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-  console.log('listening on port 3000');
+var server = app.listen(app.set('port'), function () {
+  console.log('log out on 3 stacks');
 });
-
-
-// var express = require('express');
-// var app = express();
-//
-//
-//
-// app.get('/', function(req, res) {
-//   res.send('1st Step Done!');
-// });
-// // If you set it you have to get it
-// app.set('port', process.env.PORT || 3000);
-//
-// var server = app.listen(app.get('port'), function() {
-//   console.log("listening on port 3000");
-// });
